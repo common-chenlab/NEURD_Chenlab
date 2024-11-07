@@ -48,7 +48,5 @@ class DataInterfaceMicrons(vdi_def.DataInterfaceDefault):
         return None 
     
     
-
-# volume_data_interface is an instance of data interface microns class 
+    
 volume_data_interface = DataInterfaceMicrons()
-
