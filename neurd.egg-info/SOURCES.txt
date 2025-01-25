@@ -18,6 +18,7 @@ neurd/connectome_utils.py
 neurd/documentation_utils.py
 neurd/error_detection.py
 neurd/functional_tuning_utils.py
+neurd/gnn_cell_typing_utils.py
 neurd/gnn_embedding_utils.py
 neurd/graph_filters.py
 neurd/h01_volume_utils.py
