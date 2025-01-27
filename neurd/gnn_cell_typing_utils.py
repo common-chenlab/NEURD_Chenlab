@@ -19,6 +19,27 @@ import torch_geometric.nn as nn
 from torch_geometric.loader import DataLoader
 
 
+
+#neuron_morphology_tools import
+# import temporary module
+from neuron_morphology_tools_temp import (
+    neuron_nx_stats as nxst,
+    neuron_nx_feature_processing as nxf,
+    neuron_nx_utils as nxu
+)
+print(neuron_nx_utils.__file__)
+
+
+#datasci_tools imports
+from datasci_tools import \
+    numpy_utils as nu, \
+    networkx_utils as xu, \
+    pandas_utils as pu
+
+
+
+
+
 class_name = "label"
 
 # **-- Utilities for dataset -----**
@@ -89,6 +110,14 @@ def limb_data_dict_from_G(
     features=None,
     return_dict = True
     ):
+    
+    #temporary import 
+    from neuron_morphology_tools_temp import(
+        neuron_nx_stats as nxst,
+        neuron_nx_feature_processing as nxf,
+        neuron_nx_utils as nxu)
+
+        
     if features is None:
         features = nxf.features_to_output_for_gnn
     
@@ -134,6 +163,12 @@ def limb_data_dict_from_G(
 
 class LimbGraphData(GraphData):
     def __init__(self,G,soma_attributes,limb_idx = None,label=None):
+        #temporary import
+        from neuron_morphology_tools_temp import(
+        neuron_nx_stats as nxst,
+        neuron_nx_feature_processing as nxf,
+        neuron_nx_utils as nxu)
+
         
         if "S0" in G.nodes():
             raise ValueError("This graph has a soma node, supposed to be a limb graph")
@@ -273,6 +308,14 @@ class NeuronGraphData(GraphData):
         limb_skeletal_length_min = 25_000,
         label = None,
         verbose = False):
+        
+        # temporary import
+        from neuron_morphology_tools_temp import(
+        neuron_nx_stats as nxst,
+        neuron_nx_feature_processing as nxf,
+        neuron_nx_utils as nxu)
+
+            
         """
         Purpose
         -------
@@ -301,7 +344,7 @@ class NeuronGraphData(GraphData):
                 nxu.all_limb_graphs_off_soma(G,verbose = verbose)
             )
         ]
-
+        
         # filters the limbs for a minimum skeletal length
         self.limb_skeletal_length_min = limb_skeletal_length_min
         if self.limb_skeletal_length_min is not None:
@@ -887,17 +930,4 @@ class TrainingRunner(Runner):
 
 
 
-    
-#neuron_morphology_tools import
-from neuron_morphology_tools import (
-    neuron_nx_stats as nxst,
-    neuron_nx_feature_processing as nxf,
-    neuron_nx_utils as nxu
-)
 
-
-#datasci_tools imports
-from datasci_tools import \
-    numpy_utils as nu, \
-    networkx_utils as xu, \
-    pandas_utils as pu
