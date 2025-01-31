@@ -62,6 +62,13 @@ neurd/model_data/border_df_for_e_i_improved.csv
 neurd/model_data/border_df_for_e_i_improved.pbz2
 neurd/model_data/man_proof_stats_df_for_e_i.csv
 neurd/model_data/man_proof_stats_df_for_e_i.pbz2
+neurd/neuron_morphology_tools_temp/__init__.py
+neurd/neuron_morphology_tools_temp/morphopy_utils.py
+neurd/neuron_morphology_tools_temp/neuron_nx_feature_processing.py
+neurd/neuron_morphology_tools_temp/neuron_nx_io.py
+neurd/neuron_morphology_tools_temp/neuron_nx_stats.py
+neurd/neuron_morphology_tools_temp/neuron_nx_utils.py
+neurd/neuron_morphology_tools_temp/neuron_skeleton_utils.py
 neurd/parameter_configs/__init__.py
 neurd/parameter_configs/parameters_config_default.py
 neurd/parameter_configs/parameters_config_default_old.py
